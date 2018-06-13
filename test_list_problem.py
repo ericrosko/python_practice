@@ -2,9 +2,9 @@
 
 '''
 
-Author:     Eric Rosko
-Date:       june 11, 2018
-File: test_list_problem.py
+Author: Eric Rosko
+Date:   June 11, 2018
+File:   test_list_problem.py
 Usage:
     ./test_list_problem.py -v
     python3 -m unittest
@@ -12,6 +12,7 @@ Usage:
     python3 -m unittest -v test_list_problem.py
     python3 -m unittest -v test_list_problem.FindLargestTests
     python3 -m unittest -v test_list_problem.FindLargestNestedArrayTests
+    python3 -m unittest test_list_problem.FindLargestNestedArrayTests.test_one_value_in_tuple
 
 '''
 import unittest
@@ -24,6 +25,13 @@ class FindLargestNestedArrayTests(TestCase):
     """
     Using tuples here so its all different
     """
+
+    def test_one_value(self):
+        self.assertEqual(3, find_largest_with_nested_lists(3))
+
+    def test_one_value_in_tuple(self):
+        self.assertEqual(3, find_largest_with_nested_lists((3,)))
+
     def test_one_tuple(self):
         self.assertEqual(3, find_largest_with_nested_lists((3, 2)))
 
@@ -36,7 +44,7 @@ class FindLargestNestedArrayTests(TestCase):
     def test_three_tuple_nested(self):
         self.assertEqual(6, find_largest_with_nested_lists((3, 4, (5, 6)), (1, 2)))
 
-    def test_three_tuple_nested_3_deept(self):
+    def test_three_tuple_nested_3_deep(self):
         self.assertEqual(8, find_largest_with_nested_lists((3, (4, 8), (5, 6)), (1, 2)))
 
 

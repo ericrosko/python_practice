@@ -15,7 +15,7 @@ def find_largest_with_nested_lists(*items):
     largest = None
     current = None
     for item in items:
-        # print("IN LOOP", item, type(item))
+        print("IN LOOP", item, type(item))
         if type(item) is tuple:
             current = find_largest_with_nested_lists(*item)
         else:
